@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="success">
+        
+            <lottie-player class="lottie" src="https://assets2.lottiefiles.com/private_files/lf30_4dfb546p.json"  background="transparent"  speed="2"   loop  ></lottie-player>
+    </div>
+
+    <div class="form-container">
+        <div class="onstart">
+            <lottie-player autoplay speed="2" loop src="https://assets1.lottiefiles.com/packages/lf20_iYvSqSMKZB.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"   ></lottie-player>
+        </div>
+        <h1 class="seq">Wish to Subscribe?</h1>
+        <label for="email" class="seq">Email Address</label>
+        <input type="text" id="email" class="seq">
+        <p class="seq">Don't worry!</p>
+        <a href="#" class="cta seq">Join List</a>
+        <h2>Success!</h2>
+    </div>
+   
+
+
+
+
+
+
+    
+    
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script>
+        let t1 = new gsap.timeline({ defaults: { ease: Circ.easeout}})
+        let cta = document.querySelector('.cta')
+        const player = document.querySelector('.lottie')
+
+        t1.paused(true)
+        t1.to('seq',{y:40,opacity:0,stagger: .05})
+        t1.to('.form-container',{opacity: 0}, "-=.4")
+        t1.to('h2', { opacity: 1, duration: 2, y: 20}, "+=1")
+
+        cta.addEventListener('click',()  => {
+            t1.play()
+            setTimeout(() => {
+                player.play()
+            }, 800)
+        })
+            
+
+
+
+
+
+   </script>
+
+</body>
+</html>
